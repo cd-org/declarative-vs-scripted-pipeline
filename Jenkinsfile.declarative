@@ -4,13 +4,14 @@ pipeline {
     stages {
         stage('Echo Message') {
             steps {
-                echo 'This is executed within a DECLARATIVE Pipeline'
+                sh 'ls -ltr'
+                sh 'echo "This is executed within a DECLARATIVE Pipeline"'
             }
         }
     }
     post {
         always {
-            echo 'This will always run'
+            sh 'echo "This will always run"'
             sh 'rm -rf *'
         }
     }
