@@ -1,0 +1,12 @@
+node {
+    try {
+        stage('Echo Message') {
+            sh 'echo This is executed within a SCRIPTED Pipeline'
+        }
+    } catch (err) {
+        echo "Failed: ${err}"
+    } finally {
+        echo 'This will always run'
+        //sh 'rm -r *'
+    }
+}
