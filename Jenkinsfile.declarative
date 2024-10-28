@@ -1,0 +1,16 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Echo Message') {
+            steps {
+                echo 'This is executed within a DECLARATIVE Pipeline'
+            }
+        }
+    }
+    post {
+        always {
+            sh 'rm -rf *'
+        }
+    }
+}
